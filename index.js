@@ -1,7 +1,8 @@
+const dotenv = require('dotenv').config()
 const TelegramBot = require('node-telegram-bot-api')
 const moment = require('moment')
 
-const TOKEN = '567538653:AAGb26BvhgQdpciw78-SlQIJBNQ9PxUtspc'
+const TOKEN = process.env.TOKEN
 
 //npm init to create package.json to store dependencies and to attach them
 
