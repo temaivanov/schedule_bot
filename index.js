@@ -21,7 +21,7 @@ const KB = {
 
 moment.locale('ru')
 //const week = moment().day("Monday")+" – "+moment().day("Sunday");
-const day = moment().format("DD MMM")+ ", " +moment().format('dddd');
+const day = moment().format("DD MMM")+ ", " +moment().format('dddd, h:mm');
 const weekNumber = moment().isoWeek();
 const mondayThisWeek = "Вы смотрите расписание на "+moment().weekday(0).format("DD MMM"+", "+"dddd");
 const tuesdayThisWeek = "Вы смотрите расписание на "+moment().weekday(1).format("DD MMM"+", "+"dddd");
