@@ -29,7 +29,7 @@ let weekNumber = moment().isoWeek();
 //let wednesdayThisWeek = "Вы смотрите расписание на "+moment().weekday(2).format("DD MMM"+", "+"dddd");
 //let thursdayThisWeek = "Вы смотрите расписание на "+moment().weekday(3).format("DD MMM"+", "+"dddd");
 var time = function(){
-  return moment();
+  return let now = moment();
 }
 //let time = };
 //let time = m.format('mm:ss');
@@ -85,6 +85,3 @@ function isEven (){
     return ('нечётная неделя')
   }
 }
-
-console.log(weekNumber);
-console.log(time);
