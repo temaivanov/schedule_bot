@@ -23,21 +23,39 @@ moment.locale('ru')
 //const week = moment().day("Monday")+" – "+moment().day("Sunday");
 //let day = moment().format("DD MMM, dddd");
 
-let weekNumber = moment().isoWeek();
+let weekNumber = function(){
+  let week = moment().isoWeek();
+  return week
+}
+
 //let mondayThisWeek = "Вы смотрите расписание на "+moment().weekday(0).format("DD MMM"+", "+"dddd");
 //let tuesdayThisWeek = "Вы смотрите расписание на "+moment().weekday(1).format("DD MMM"+", "+"dddd");
 //let wednesdayThisWeek = "Вы смотрите расписание на "+moment().weekday(2).format("DD MMM"+", "+"dddd");
 //let thursdayThisWeek = "Вы смотрите расписание на "+moment().weekday(3).format("DD MMM"+", "+"dddd");
-var time = function(){
-  let now = moment();
+
+
+/*{
+  var time = function(){
+  let now = moment().minute();
   return now
 }
+
+function check(now){
+  if (now%2 == 0) return now
+  else {
+    return "not even"}
+  }
+
+
+console.log(check(time()));}*/
+
+
 //let time = };
 //let time = m.format('mm:ss');
 /*====================================================*/
 
 bot.onText(/\/start/, (msg) => {
-  const text = `Привет, ${msg.from.first_name}\n${time()}\nТекущая неделя ${weekNumber}-ая в 2018 году, ${isEven(weekNumber)}\nСегодня: ${moment().format("DD MMM, dddd")}\nВремя: ${moment().format('HH:mm')}\nДанный бот покажет расписание занятий на текущей неделе.\n\nРасписание на какой день вам нужно?`
+  const text = `Привет, ${msg.from.first_name}\n${time()}\nТекущая неделя ${weekNumber}-ая в 2018 году, ${isEven(weekNumber())}\nСегодня: ${moment().format("DD MMM, dddd")}\nВремя: ${moment().format('HH:mm')}\nДанный бот покажет расписание занятий на текущей неделе.\n\nРасписание на какой день вам нужно?`
   bot.sendMessage(msg.chat.id, text, {
     reply_markup: {
       keyboard: [
@@ -51,7 +69,7 @@ bot.onText(/\/start/, (msg) => {
 })
 
 bot.on('message', (msg) => {
-if (weekNumber%2 == 0) {
+if (week%2 == 0) {
 /*====================================================*/
 /*==================ЧЕТНАЯ НЕДЕЛЯ=====================*/
     const chatId = msg.chat.id;
@@ -80,8 +98,8 @@ if (weekNumber%2 == 0) {
 }
 })
 
-function isEven (){
-  if (weekNumber%2 == 0) return ('чётная неделя');
+function isEven (week){
+  if (week%2 == 0) return ('чётная неделя');
   else {
     return ('нечётная неделя')
   }
