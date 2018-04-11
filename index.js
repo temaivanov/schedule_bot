@@ -24,8 +24,8 @@ moment.locale('ru')
 //let day = moment().format("DD MMM, dddd");
 
 let weekNumber = function(){
-  let week = 14;
-  //let week = moment().isoWeek();
+  //let week = 14;
+  let week = moment().isoWeek();
   return week
 }
 
