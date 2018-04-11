@@ -23,17 +23,17 @@ const KB = {
 moment.locale('ru')
 //const week = moment().day("Monday")+" – "+moment().day("Sunday");
 //let day = moment().format("DD MMM, dddd");
-let time = moment().format('HH:mm');
-//let weekNumber = moment().isoWeek();
+
+let weekNumber = moment().isoWeek();
 //let mondayThisWeek = "Вы смотрите расписание на "+moment().weekday(0).format("DD MMM"+", "+"dddd");
 //let tuesdayThisWeek = "Вы смотрите расписание на "+moment().weekday(1).format("DD MMM"+", "+"dddd");
 //let wednesdayThisWeek = "Вы смотрите расписание на "+moment().weekday(2).format("DD MMM"+", "+"dddd");
 //let thursdayThisWeek = "Вы смотрите расписание на "+moment().weekday(3).format("DD MMM"+", "+"dddd");
-
+let time = moment().format('HH:mm');
 /*====================================================*/
 
 bot.onText(/\/start/, (msg) => {
-  const text = `Привет, ${msg.from.first_name}\n\nТекущая неделя ${moment().isoWeek()}-ая в 2018 году, ${isEven(moment().isoWeek())}\nСегодня: ${moment().format("DD MMM, dddd")}\nВремя: ${moment().format('HH:mm')}\nДанный бот покажет расписание занятий на текущей неделе.\n\nРасписание на какой день вам нужно?`
+  const text = `Привет, ${msg.from.first_name}\n${time}\nТекущая неделя ${moment().isoWeek()}-ая в 2018 году, ${isEven(weekNumber)}\nСегодня: ${moment().format("DD MMM, dddd")}\nВремя: ${moment().format('HH:mm')}\nДанный бот покажет расписание занятий на текущей неделе.\n\nРасписание на какой день вам нужно?`
   bot.sendMessage(msg.chat.id, text, {
     reply_markup: {
       keyboard: [
@@ -77,10 +77,11 @@ if (weekNumber%2 == 0) {
 })
 
 function isEven (){
-  if (moment().isoWeek()%2 == 0) return ('чётная неделя');
+  if (weekNumber%2 == 0) return ('чётная неделя');
   else {
     return ('нечётная неделя')
   }
 }
 
-//console.log(weekNumber);
+console.log(weekNumber);
+console.log(time);
