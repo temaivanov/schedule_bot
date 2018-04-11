@@ -1,7 +1,6 @@
 const dotenv = require('dotenv').config();
 const TelegramBot = require('node-telegram-bot-api');
 const moment = require('moment');
-moment().format();
 
 const TOKEN = process.env.TOKEN
 
@@ -29,7 +28,7 @@ let weekNumber = moment().isoWeek();
 //let tuesdayThisWeek = "Вы смотрите расписание на "+moment().weekday(1).format("DD MMM"+", "+"dddd");
 //let wednesdayThisWeek = "Вы смотрите расписание на "+moment().weekday(2).format("DD MMM"+", "+"dddd");
 //let thursdayThisWeek = "Вы смотрите расписание на "+moment().weekday(3).format("DD MMM"+", "+"dddd");
-let time = moment().toObject().minutes;
+let time = moment().minutes();
 /*====================================================*/
 
 bot.onText(/\/start/, (msg) => {
