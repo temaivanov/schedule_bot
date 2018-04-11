@@ -33,7 +33,7 @@ let weekNumber = moment().isoWeek();
 /*====================================================*/
 
 bot.onText(/\/start/, (msg) => {
-  const text = `Привет, ${msg.from.first_name}\n\nТекущая неделя ${moment().isoWeek()}-ая в 2018 году, ${isEven(weekNumber)}\nСегодня: ${moment().format("DD MMM, dddd")}\nВремя: ${time}\nДанный бот покажет расписание занятий на текущей неделе.\n\nРасписание на какой день вам нужно?`
+  const text = `Привет, ${msg.from.first_name}\n\nТекущая неделя ${moment().isoWeek()}-ая в 2018 году, ${isEven(weekNumber)}\nСегодня: ${moment().format("DD MMM, dddd")}\nВремя: ${time()}\nДанный бот покажет расписание занятий на текущей неделе.\n\nРасписание на какой день вам нужно?`
   bot.sendMessage(msg.chat.id, text, {
     reply_markup: {
       keyboard: [
