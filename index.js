@@ -28,7 +28,8 @@ let weekNumber = moment().isoWeek();
 //let tuesdayThisWeek = "Вы смотрите расписание на "+moment().weekday(1).format("DD MMM"+", "+"dddd");
 //let wednesdayThisWeek = "Вы смотрите расписание на "+moment().weekday(2).format("DD MMM"+", "+"dddd");
 //let thursdayThisWeek = "Вы смотрите расписание на "+moment().weekday(3).format("DD MMM"+", "+"dddd");
-let time = moment().minutes();
+let m = moment();
+let time = m.minutes();
 /*====================================================*/
 
 bot.onText(/\/start/, (msg) => {
