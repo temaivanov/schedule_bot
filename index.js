@@ -77,7 +77,7 @@ if (weekNumber%2 == 0) {
 })
 
 function isEven (){
-  if ((moment().isoWeek())%2 == 0) return ('чётная неделя');
+  if (moment().isoWeek()%2 == 0) return ('чётная неделя');
   else {
     return ('нечётная неделя')
   }
