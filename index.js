@@ -22,7 +22,7 @@ const KB = {
 
 moment.locale('ru')
 //const week = moment().day("Monday")+" – "+moment().day("Sunday");
-let day = moment().format("DD MMM")+ ", " +moment().format('dddd')+", "+moment().format('HH:mm');
+let day = moment().format("DD MMM")+ ", " +moment().format('dddd');
 let weekNumber = moment().isoWeek();
 let mondayThisWeek = "Вы смотрите расписание на "+moment().weekday(0).format("DD MMM"+", "+"dddd");
 let tuesdayThisWeek = "Вы смотрите расписание на "+moment().weekday(1).format("DD MMM"+", "+"dddd");
@@ -32,7 +32,7 @@ let thursdayThisWeek = "Вы смотрите расписание на "+moment
 /*====================================================*/
 
 bot.onText(/\/start/, (msg) => {
-  const text = `Привет, ${msg.from.first_name}\n\nТекущая неделя ${weekNumber}-ая в 2018 году, ${isEven(weekNumber)}\nСегодня: ${day}\n\nДанный бот покажет расписание занятий на текущей неделе.\n\nРасписание на какой день вам нужно?`
+  const text = `Привет, ${msg.from.first_name}\n\nТекущая неделя ${weekNumber}-ая в 2018 году, ${isEven(weekNumber)}\nСегодня: ${day}\nВремя: ${moment().format('HH:mm')}\nДанный бот покажет расписание занятий на текущей неделе.\n\nРасписание на какой день вам нужно?`
   bot.sendMessage(msg.chat.id, text, {
     reply_markup: {
       keyboard: [
