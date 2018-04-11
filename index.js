@@ -22,12 +22,12 @@ const KB = {
 
 moment.locale('ru')
 //const week = moment().day("Monday")+" – "+moment().day("Sunday");
-const day = moment().format("DD MMM")+ ", " +moment().format('dddd')+", "+moment().format('HH : mm');
-const weekNumber = moment().isoWeek();
-const mondayThisWeek = "Вы смотрите расписание на "+moment().weekday(0).format("DD MMM"+", "+"dddd");
-const tuesdayThisWeek = "Вы смотрите расписание на "+moment().weekday(1).format("DD MMM"+", "+"dddd");
-const wednesdayThisWeek = "Вы смотрите расписание на "+moment().weekday(2).format("DD MMM"+", "+"dddd");
-const thursdayThisWeek = "Вы смотрите расписание на "+moment().weekday(3).format("DD MMM"+", "+"dddd");
+let day = moment().format("DD MMM")+ ", " +moment().format('dddd')+", "+moment().format('HH:mm');
+let weekNumber = moment().isoWeek();
+let mondayThisWeek = "Вы смотрите расписание на "+moment().weekday(0).format("DD MMM"+", "+"dddd");
+let tuesdayThisWeek = "Вы смотрите расписание на "+moment().weekday(1).format("DD MMM"+", "+"dddd");
+let wednesdayThisWeek = "Вы смотрите расписание на "+moment().weekday(2).format("DD MMM"+", "+"dddd");
+let thursdayThisWeek = "Вы смотрите расписание на "+moment().weekday(3).format("DD MMM"+", "+"dddd");
 
 /*====================================================*/
 
