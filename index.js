@@ -83,4 +83,4 @@ function isEven (){
   }
 }
 
-console.log(weekNumber);
+//console.log(weekNumber);
