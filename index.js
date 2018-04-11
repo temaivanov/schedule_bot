@@ -29,11 +29,11 @@ let weekNumber = moment().isoWeek();
 //let tuesdayThisWeek = "Вы смотрите расписание на "+moment().weekday(1).format("DD MMM"+", "+"dddd");
 //let wednesdayThisWeek = "Вы смотрите расписание на "+moment().weekday(2).format("DD MMM"+", "+"dddd");
 //let thursdayThisWeek = "Вы смотрите расписание на "+moment().weekday(3).format("DD MMM"+", "+"dddd");
-let time = moment.format('HH:mm');
+let time = moment().hour();
 /*====================================================*/
 
 bot.onText(/\/start/, (msg) => {
-  const text = `Привет, ${msg.from.first_name}\n${time}\nТекущая неделя ${moment().isoWeek()}-ая в 2018 году, ${isEven(weekNumber)}\nСегодня: ${moment().format("DD MMM, dddd")}\nВремя: ${moment().format('HH:mm')}\nДанный бот покажет расписание занятий на текущей неделе.\n\nРасписание на какой день вам нужно?`
+  const text = `Привет, ${msg.from.first_name}\n${time}\nТекущая неделя ${weekNumber}-ая в 2018 году, ${isEven(weekNumber)}\nСегодня: ${moment().format("DD MMM, dddd")}\nВремя: ${moment().format('HH:mm')}\nДанный бот покажет расписание занятий на текущей неделе.\n\nРасписание на какой день вам нужно?`
   bot.sendMessage(msg.chat.id, text, {
     reply_markup: {
       keyboard: [
