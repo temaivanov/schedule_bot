@@ -28,9 +28,9 @@ let weekNumber = moment().isoWeek();
 //let tuesdayThisWeek = "Вы смотрите расписание на "+moment().weekday(1).format("DD MMM"+", "+"dddd");
 //let wednesdayThisWeek = "Вы смотрите расписание на "+moment().weekday(2).format("DD MMM"+", "+"dddd");
 //let thursdayThisWeek = "Вы смотрите расписание на "+moment().weekday(3).format("DD MMM"+", "+"dddd");
-while (true) {
-  moment();
-  let time = moment();}
+var time = function(){
+  return moment();
+}
 //let time = };
 //let time = m.format('mm:ss');
 /*====================================================*/
