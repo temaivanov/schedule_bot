@@ -70,7 +70,7 @@ bot.onText(/\/start/, (msg) => {
 })
 
 bot.on('message', (msg) => {
-if ((isEven(weekNumber()))%2 == 0) {
+if (week%2 == 0) {
 /*====================================================*/
 /*==================ЧЕТНАЯ НЕДЕЛЯ=====================*/
     const chatId = msg.chat.id;
@@ -100,7 +100,7 @@ if ((isEven(weekNumber()))%2 == 0) {
 })
 
 function isEven (week){
-  if (week%2 == 0) return ('чётная неделя');
+  if (week%2 == 0) return true ('чётная неделя');
   else {
     return ('нечётная неделя')
   }
