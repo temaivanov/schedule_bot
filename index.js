@@ -48,14 +48,14 @@ function check(now){
 
 
 console.log(check(time()));}*/
-
+console.log(isEven(weekNumber()));
 
 //let time = };
 //let time = m.format('mm:ss');
 /*====================================================*/
 
 bot.onText(/\/start/, (msg) => {
-  const text = `Привет, ${msg.from.first_name}\n${time()}\nТекущая неделя ${moment().isoWeek()}-ая в 2018 году, ${(isEven(weekNumber()))}\nСегодня: ${moment().format("DD MMM, dddd")}\nВремя: ${moment().format('HH:mm')}\nДанный бот покажет расписание занятий на текущей неделе.\n\nРасписание на какой день вам нужно?`
+  const text = `Привет, ${msg.from.first_name}\n\nТекущая неделя ${moment().isoWeek()}-ая в 2018 году, ${(isEven(weekNumber()))}\nСегодня: ${moment().format("DD MMM, dddd")}\nВремя: ${moment().format('HH:mm')}\nДанный бот покажет расписание занятий на текущей неделе.\n\nРасписание на какой день вам нужно?`
   bot.sendMessage(msg.chat.id, text, {
     reply_markup: {
       keyboard: [
