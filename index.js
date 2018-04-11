@@ -100,7 +100,7 @@ if (weekNumber()%2 == 0) {
 })
 
 function isEven (week){
-  if (week%2 == 0) return true ('чётная неделя');
+  if (week%2 == 0) return ('чётная неделя');
   else {
     return ('нечётная неделя')
   }
